@@ -18,7 +18,7 @@ const UpdateItem = ({ params }) => {
 
     useEffect(() => {
         const getSingleItem = async(id) => {
-            const response = await fetch(`http://localhost:3000/api/item/readsingle/${id}`, {cache: "no-store"})
+            const response = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/item/readsingle/${id}`, {cache: "no-store"})
             const jsonData = await response.json() 
             const singleItem = jsonData.singleItem
             setTitle(singleItem.title)
